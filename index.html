@@ -1,0 +1,31 @@
+<DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title>Contato nosso projeto</title>
+
+	<style>
+	/* Um simples CCS pra ficar cheirosinho */
+	 body {font-family: Arial, sans-serif; padding: 20px} 	form {max-width: 300px; display: flex; flex-direction: column; gap: 10px};
+	input, textarea, button {padding: 8px;}
+	</style> 
+
+</head>
+<body>
+<h2>Fale Conosco</h2>
+
+<form action="processa.php" method="POST">
+	<label>Nome:</label>
+	<input type="text" name="nome" required>
+
+	<label>E-mail:</label>
+	<input type="email" name="email" required>
+
+	<label>Mensagem:</label>
+	<textarea name= "mensagem" required></textarea>
+
+	<button type="submit"> Enviar Dados</button>
+</form>
+</body>
+
+</html>
