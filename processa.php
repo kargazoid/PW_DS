@@ -1,4 +1,7 @@
 <?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 // 1. Configurações de acesso ao Banco de Dados
 $host = 'localhost';
 $dbname = 'projeto_site';
@@ -9,10 +12,12 @@ $senha = ''; // Senha padrão do XAMPP geralmente é vazia
 try {
     $conexao = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $usuario, $senha);
     // Configura o PDO para mostrar erros caso algo de errado
-    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);}
+    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
     catch (PDOException $e) {
     // Se der erro na conexão, o sistema para e avisa
-    die("Erro ao conectar com o banco de dados: " . $e->getMessage());}
+    die("Erro ao conectar com o banco de dados: " . $e->getMessage());
+}
 
 // 3. Recebendo os dados do formulário HTML (os names dos inputs)
 // o 'if' garante que só vai tentar salvar se o formulário realmente foi enviado
