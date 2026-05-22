@@ -5,29 +5,83 @@
 	<title>Contato nosso projeto</title>
 
 	<style>
-	/* Um simples CCS pra ficar cheirosinho */
-	 body {font-family: Arial, sans-serif; padding: 20px} 	form {max-width: 300px; display: flex; flex-direction: column; gap: 10px};
-	input, textarea, button {padding: 8px;}
-	</style> 
+		/* css glass pra ficar cheirosinho */
+		* { margin: 0; padding: 0; box-sizing: border-box; }
 
+		body {
+			font-family: Arial, sans-serif;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: linear-gradient(135deg, #0d2144, #1a3a6e);
+		}
+
+		.container {
+			background: rgba(255, 255, 255, 0.1);
+			backdrop-filter: blur(10px);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			border-radius: 10px;
+			padding: 30px;
+			width: 320px;
+		}
+
+		h2 { color: #fff; margin-bottom: 20px; }
+
+		form { display: flex; flex-direction: column; gap: 10px; }
+
+		label { color: rgba(255,255,255,0.8); font-size: 13px; }
+
+		input, textarea {
+			padding: 8px;
+			background: rgba(255,255,255,0.1);
+			border: 1px solid rgba(255,255,255,0.25);
+			border-radius: 6px;
+			color: #fff;
+			font-size: 14px;
+			outline: none;
+		}
+
+		input:focus, textarea:focus {
+			border-color: rgba(100,180,255,0.7);
+		}
+
+		button {
+			padding: 10px;
+			background: rgba(60,120,220,0.6);
+			border: 1px solid rgba(100,160,255,0.4);
+			border-radius: 6px;
+			color: #fff;
+			font-size: 14px;
+			cursor: pointer;
+		}
+
+		button:hover { background: rgba(80,140,240,0.8); }
+
+		a { display: block; margin-top: 14px; color: rgba(180,220,255,0.7); font-size: 13px; }
+		a:hover { color: #fff; }
+	</style>
 </head>
 <body>
-<h2>Fale Conosco</h2>
 
-<form action="processa.php" method="POST">
-	<label>Nome:</label>
-	<input type="text" name="nome" required>
+<div class="container">
+	<h2>Fale Conosco</h2>
 
-	<label>E-mail:</label>
-	<input type="email" name="email" required>
+	<form action="processa.php" method="POST">
+		<label>Nome:</label>
+		<input type="text" name="nome" required>
 
-	<label>Mensagem:</label>
-	<textarea name= "mensagem" required></textarea>
+		<label>E-mail:</label>
+		<input type="email" name="email" required>
 
-	<button type="submit"> Enviar Dados</button>
-</form>
-<br>
-<a href="listar.php">Listar Dados</a>
+		<label>Mensagem:</label>
+		<textarea name="mensagem" required></textarea>
+
+		<button type="submit">Enviar Dados</button>
+	</form>
+
+	<a href="listar.php">Listar Dados</a>
+</div>
+
 </body>
-
 </html>
